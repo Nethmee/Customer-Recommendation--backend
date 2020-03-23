@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify,render_template
 from flask_sqlalchemy import SQLAlchemy
 from  flask_marshmallow import Marshmallow
 import os
@@ -67,6 +67,7 @@ def add_Customer():
     have_kids = request.json['have_kids'] 
     city = request.json['city']
     religion = request.json['religion']
+
     
     new_Customer = Customer(f_name,l_name,age,marital_status,income,have_kids,city,religion)
     
@@ -75,6 +76,14 @@ def add_Customer():
     db.session.commit()
     #return "success"
     return Customer_schema.jsonify(new_Customer) 
+
+@app.route("/")
+def front():
+    return render_template("front.html")
+
+
+
+
 #run the server
 if __name__ =='__main__':
      app.run(debug=True)
