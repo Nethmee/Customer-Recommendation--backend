@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify,render_template
+from flask import Flask, request, jsonify,render_template, redirect
 from flask_sqlalchemy import SQLAlchemy
 from  flask_marshmallow import Marshmallow
 import os
@@ -9,7 +9,10 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 #database
 app.config['SQLALCHEMY_DATABASE_URI']= 'sqlite:///'+os.path.join(basedir, 'db.sqlite')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+ 
 
+#path to where the u=images are saved
+app.config['IMAGE_UPLOADS']=basedir+'\Images'
 #initialinsing the db
 db = SQLAlchemy(app)
 
@@ -81,8 +84,16 @@ def add_Customer():
 def front():
     return render_template("front.html")
 
+@app.route('/uploadImages',methods=['POST'])
+def uploadImage():
+    if request.method == "POST":
 
+        if request.files:#request.files is an inbuilt object to store the file object just like request.
+            image =request.files["image"]
+            print(image)
+            image.save(os.path.join(app.config['IMAGE_UPLOADS'],image.filename))
 
+    return "sucessfully updated"
 
 #run the server
 if __name__ =='__main__':
