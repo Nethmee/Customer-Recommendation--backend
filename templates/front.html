@@ -15,20 +15,22 @@
    </style>
 </head>
 <body>
-    <form action="/uploadImages" method="POST" enctype="multipart/form-data">
-      <!--   <div class="form-row">
+  <form action="/AddCustomer" method="POST" enctype="multipart/form-data">
+    <h5 for="exampleFormControlFile1"> Customer Details</h5><br/>
+    <div class="form-row">
           <div class="form-group col-md-6">
-            <label for="inputEmail4">Email</label>
-            <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+         
+            <label for="inputEmail4">First Name</label>
+            <input type="email" class="form-control" id="inputEmail4" placeholder="First Name">
           </div>
           <div class="form-group col-md-6">
-            <label for="inputPassword4">Password</label>
-            <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+            <label for="inputPassword4">Last Name</label>
+            <input type="password" class="form-control" id="inputPassword4" placeholder="Last Name">
           </div>
         </div>
         <div class="form-group">
-          <label for="inputAddress">Address</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+          <label for="inputAddress">Age</label>
+          <input type="number" class="form-control" id="inputAddress" placeholder="Age">
         </div>
         <div class="form-group">
           <label for="inputAddress2">Address 2</label>
@@ -58,7 +60,10 @@
               Check me out
             </label>
           </div>
-        </div> -->
+        </div> 
+        <button type="submit" class="btn btn-primary">Save Customer</button>
+      </form> <br/>
+        <form action="/uploadImages" method="POST" enctype="multipart/form-data">
         <div class="form-group">
           <h5 for="exampleFormControlFile1"> Example file input</h5><br/>
           <div class="custom-file">

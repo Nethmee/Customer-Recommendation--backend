@@ -96,11 +96,13 @@ def uploadImage():
             directories=os.listdir(app.config['IMAGE_UPLOADS'])
             print(directories)
             os.chdir(app.config['IMAGE_UPLOADS'])
-
-            newFolder=os.mkdir(image.filename)
+            folderName=os.path.splitext(image.filename)[0]
+            print(folderName)
+            newFolder=os.mkdir(folderName)
            
-            image.save(os.path.join(app.config['IMAGE_UPLOADS'],image.filename,image.filename)) #save is an inbuilt function to save the files
-
+            image.save(os.path.join(app.config['IMAGE_UPLOADS'],folderName,image.filename)) #save is an inbuilt function to save the files
+            os.chdir(basedir)
+          
     return "sucessfully updated"
 
 #run the server
