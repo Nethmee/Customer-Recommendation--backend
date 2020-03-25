@@ -34,7 +34,7 @@ class Customer(db.Model):
     city=db.Column(db.String(30))
     religion=db.Column(db.String(30))
 
-    def __init__(self,f_name,l_name,age,marital_status,income,have_kids,city,religion):# analogy for this in java
+    def __init__(self,f_name,l_name,age,marital_status,income,have_kids,city,religion):# analogy for "this" in java
         self.f_name = f_name
         self.l_name = l_name
         self.age = age
