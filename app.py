@@ -13,6 +13,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 #path to where the u=images are saved
 app.config['IMAGE_UPLOADS']=basedir+'\Images'
+#allowed extentions for the  images
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 #initialinsing the db
 db = SQLAlchemy(app)
 
@@ -89,9 +91,15 @@ def uploadImage():
     if request.method == "POST":
 
         if request.files:#request.files is an inbuilt object to store the file object just like request.
-            image =request.files["image"]
+            image =request.files["image"] # image is the name given in the form tag in html front end
             print(image)
-            image.save(os.path.join(app.config['IMAGE_UPLOADS'],image.filename))
+            directories=os.listdir(app.config['IMAGE_UPLOADS'])
+            print(directories)
+            os.chdir(app.config['IMAGE_UPLOADS'])
+
+            newFolder=os.mkdir(image.filename)
+           
+            image.save(os.path.join(app.config['IMAGE_UPLOADS'],image.filename,image.filename)) #save is an inbuilt function to save the files
 
     return "sucessfully updated"
 
