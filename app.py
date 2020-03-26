@@ -65,16 +65,16 @@ def testHello():
 def add_Customer():
     print(request.form)
     req=request.form
-    # f_name=req['f_name']
-    # l_name = req['l_name']
-    # age = req['age']
-    # city = req['city']
-    # income = req['income'] 
-    # religion = req['religion']
-    # have_kids = req['have_kids']
-    # marital_status = req['marital_status']
+    f_name=req['f_name']
+    l_name = req['l_name']
+    age = req['age']
+    city = req['city']
+    income = req['income'] 
+    religion = req['religion']
+    have_kids = req['have_kids']
+    marital_status = req['marital_status']
 
-
+######################## this is the method used when the encoding type is the default url encoding
     # f_name = request.json['f_name']
     # l_name = request.json['l_name']
     # age = request.json['age']
@@ -86,11 +86,11 @@ def add_Customer():
     # religion = request.json['religion']
 
     
-    # new_Customer = Customer(f_name,l_name,age,marital_status,income,have_kids,city,religion)
+    new_Customer = Customer(f_name,l_name,age,marital_status,income,have_kids,city,religion)
     
   
-    # db.session.add(new_Customer)
-    # db.session.commit()
+    db.session.add(new_Customer)
+    db.session.commit()
     return "success"
     #return Customer_schema.jsonify(new_Customer) 
 
