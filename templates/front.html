@@ -15,74 +15,69 @@
    </style>
 </head>
 <body>
-  <form action="/AddCustomer" method="POST" enctype="multipart/form-data">
+  
+  <form action="/AddCustomer" method="POST"  enctype="multipart/form-data">
     <h5 for="exampleFormControlFile1"> Customer Details</h5><br/>
     <div class="form-row">
           <div class="form-group col-md-6">
          
             <label for="inputEmail4">First Name</label>
-            <input type="email" class="form-control" id="inputEmail4" placeholder="First Name">
+            <input type="text" class="form-control"  placeholder="First Name" name="f_name" value="Tharani">
           </div>
           <div class="form-group col-md-6">
             <label for="inputPassword4">Last Name</label>
-            <input type="password" class="form-control" id="inputPassword4" placeholder="Last Name">
+            <input type="text" class="form-control"  placeholder="Last Name"  name="l_name" value="Sellahewa">
           </div>
         </div>
         <div class="form-group">
           <label for="inputAddress">Age</label>
-          <input type="number" class="form-control" id="inputAddress" placeholder="Age">
+          <input type="text" class="form-control" placeholder="Age"  name="age" value=23>
         </div>
         <div class="form-group">
           <label for="inputAddress2">city </label>
-          <input type="text" class="form-control" id="inputAddress2" placeholder="city">
+          <input type="text" class="form-control"  placeholder="city"  name="city" value="Colombo">
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
             <label for="inputCity">Income</label>
-            <input type="text" class="form-control" id="inputCity">
-          </div>
-          <div class="form-group col-md-3">
+            <input type="text" class="form-control"  name="income" value="123">  
+          </div> 
+         <div class="form-group col-md-3">
             <label for="inputState">Maritel Status</label>
-            <select id="inputState" class="form-control">
-              <option selected>Choose...</option>
-              <option>Single</option>
-              <option>Married</option>
+            <select id="inputState" class="form-control" name="marital_status">
+              
+              <option value="Single">Single</option>
+              <option value="Married">Married</option>
             </select>
           </div>
           <div class="form-group col-md-3">
             <label for="inputState">Have kids ?</label>
-            <select id="inputState" class="form-control">
+            <select id="inputState" class="form-control" name="have_kids">
              
-              <option>yes</option>
-              <option>no</option>
+              <option  value="yes">yes</option>
+              <option  value="no">no</option>
             </select>
           </div>
         </div>
         <div class="form-group">
           <label for="inputAddress2">Religion </label>
-          <select id="inputState" class="form-control">
+          <select id="inputState" class="form-control" name="religion">
              
-            <option>Buddhism</option>
-            <option>Hindusm</option>
-            <option>Muslim</option>
-            <option>Catholic</option>
-            <option>Other</option>
+            <option value="Buddhism">Buddhism</option>
+            <option  value="Hindusm">Hindusm</option>
+            <option value="Muslim">Muslim</option>
+            <option value="Catholic">Catholic</option>
+            <option value="Other">Other</option>
             
           </select>
-        </div>
-        <div class="form-group">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck">
-            <label class="form-check-label" for="gridCheck">
-              Check me out
-            </label>
-          </div>
         </div> 
+       
         <button type="submit" class="btn btn-primary">Save Customer</button>
+
       </form> <br/>
         <form action="/uploadImages" method="POST" enctype="multipart/form-data">
         <div class="form-group">
-          <h5 for="exampleFormControlFile1"> Example file input</h5><br/>
+          <h5 for="exampleFormControlFile1">Example file input</h5><br/>
           <div class="custom-file">
           <input type="file" class="custom-file-input" id="exampleFormControlFile1" name="image">
           <label class="custom-file-label" for="image">Select image</label>

@@ -63,24 +63,36 @@ def testHello():
 #Adding a customer end point
 @app.route('/AddCustomer', methods=['POST'])
 def add_Customer():
- 
-    f_name = request.json['f_name']
-    l_name = request.json['l_name']
-    age = request.json['age']
-    marital_status = request.json['marital_status']
-    income = request.json['income']
-    have_kids = request.json['have_kids'] 
-    city = request.json['city']
-    religion = request.json['religion']
+    print(request.form)
+    req=request.form
+    # f_name=req['f_name']
+    # l_name = req['l_name']
+    # age = req['age']
+    # city = req['city']
+    # income = req['income'] 
+    # religion = req['religion']
+    # have_kids = req['have_kids']
+    # marital_status = req['marital_status']
+
+
+    # f_name = request.json['f_name']
+    # l_name = request.json['l_name']
+    # age = request.json['age']
+    # marital_status = request.json['marital_status']
+    # city = request.json['city']
+    # income = request.json['income']
+    # have_kids = request.json['have_kids'] 
+   
+    # religion = request.json['religion']
 
     
-    new_Customer = Customer(f_name,l_name,age,marital_status,income,have_kids,city,religion)
+    # new_Customer = Customer(f_name,l_name,age,marital_status,income,have_kids,city,religion)
     
   
-    db.session.add(new_Customer)
-    db.session.commit()
-    #return "success"
-    return Customer_schema.jsonify(new_Customer) 
+    # db.session.add(new_Customer)
+    # db.session.commit()
+    return "success"
+    #return Customer_schema.jsonify(new_Customer) 
 
 @app.route("/")
 def front():
